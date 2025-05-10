@@ -1,0 +1,88 @@
+.summary {
+    background-color: #f9f9f9;
+    border-radius: 8px 8px 0 0;
+}
+
+.summary-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px;
+}
+
+.summary-head {
+    display: grid;
+    grid-template-columns: minmax(200px, 270px) minmax(40px, 80px) minmax(40px, 100px) 1fr;
+}
+
+.summary-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas: "name total" "qty total";
+    gap: 10px;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .summary-item {
+        grid-template-columns: minmax(200px, 270px) minmax(40px, 80px) minmax(40px, 100px) 1fr;
+        grid-template-areas: "name qty price total";
+        gap: 0;
+    }
+}
+
+.summary-text {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #000;
+}
+
+.item-name {
+    grid-area: name;
+}
+
+.item-qty {
+    grid-area: qty;
+    color: #666;
+}
+
+@media (min-width: 768px) {
+    .item-qty {
+        justify-self: center;
+    }
+}
+
+.item-price {
+    grid-area: price;
+    color: #666;
+}
+
+@media (min-width: 768px) {
+    .item-price {
+        justify-self: end;
+    }
+}
+
+.item-total {
+    grid-area: total;
+}
+
+@media (min-width: 768px) {
+    .item-total {
+        justify-self: end;
+    }
+}
+
+.summary-heading {
+    font-size: 0.875rem;
+    color: #666;
+    font-weight: 400;
+}
+
+.js-center {
+    justify-self: center;
+}
+
+.js-end {
+    justify-self: end;
+}

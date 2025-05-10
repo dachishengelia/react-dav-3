@@ -1,0 +1,15 @@
+.wrapper {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+    background-color: var(--bg-main, #f9f9f9); 
+    transition: background-color 400ms ease-in-out;
+}
+
+
+@media (min-width: 1024px) {
+    .wrapper {
+        flex-flow: row;
+    }
+}

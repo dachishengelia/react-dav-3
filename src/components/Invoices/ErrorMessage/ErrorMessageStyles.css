@@ -1,0 +1,29 @@
+.styled-error-message {
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+    width: clamp(217px, 32vw, 242px);
+    margin: clamp(70px, 10vw, 140px) auto 0 auto;
+  }
+  
+  .illustration {
+    background-image: url('../../../assets/images/illustration-empty.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 200px;
+    margin-bottom: clamp(40px, 6vw, 64px);
+  }
+
+  
+  
+  .text {
+    color: var(--text-tertiary);
+    max-width: 220px;
+    margin: 0 auto;
+    transition: color 400ms ease-in-out;
+  }
+  
+  .bold {
+    font-weight: 700;
+  }

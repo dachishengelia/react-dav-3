@@ -1,0 +1,188 @@
+.invoice-info {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.1);
+    padding: clamp(24px, 4vw, 48px);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "key ."
+        "senderAddress ."
+        "createdDate clientInfo"
+        "paymentDue clientInfo"
+        "email email";
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+@media (min-width: 600px) {
+    .container {
+        grid-template-columns: auto auto auto;
+        grid-template-areas:
+            "key . senderAddress"
+            "createdDate clientInfo email"
+            "paymentDue clientInfo email";
+        gap: 20px;
+    }
+}
+
+.key {
+    grid-area: key;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.uid {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.hashtag {
+    color: #888;
+}
+
+.desc-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.created-date {
+    grid-area: createdDate;
+}
+
+.payment-due {
+    grid-area: paymentDue;
+    align-self: end;
+}
+
+.client-info {
+    grid-area: clientInfo;
+}
+
+.email {
+    grid-area: email;
+}
+
+.heading {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #777;
+}
+
+.text {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.address {
+    display: flex;
+    flex-direction: column;
+    font-style: normal;
+    color: #777;
+}
+
+.sender-address {
+    grid-area: senderAddress;
+}
+
+@media (min-width: 600px) {
+    .sender-address {
+        justify-self: end;
+        text-align: right;
+    }
+}
+
+.summary {
+    background-color: #f9f9f9;
+    border-radius: 8px 8px 0 0;
+}
+
+.summary-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px;
+}
+
+.summary-head {
+    display: grid;
+    grid-template-columns: minmax(200px, 270px) minmax(40px, 80px) minmax(40px, 100px) 1fr;
+}
+
+.summary-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+        "name total"
+        "qty total";
+    gap: 10px;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .summary-item {
+        grid-template-columns: minmax(200px, 270px) minmax(40px, 80px) minmax(40px, 100px) 1fr;
+        grid-template-areas: "name qty price total";
+        gap: 0;
+    }
+}
+
+.summary-heading {
+    font-weight: 400;
+    color: #777;
+}
+
+.summary-text {
+    font-weight: 600;
+    color: #000;
+}
+
+.item-name {
+    grid-area: name;
+}
+
+.item-qty {
+    grid-area: qty;
+    color: #777;
+    justify-self: start;
+}
+
+@media (min-width: 768px) {
+    .item-qty {
+        justify-self: center;
+    }
+}
+
+.item-price {
+    grid-area: price;
+    color: #777;
+    justify-self: end;
+}
+
+.item-total {
+    grid-area: total;
+    justify-self: end;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    border-radius: 0 0 8px 8px;
+    padding: 14px 32px;
+}
+
+.total-heading,
+.total-text {
+    color: #fff;
+}
+
+.total-text {
+    font-size: 1.5rem;
+}
